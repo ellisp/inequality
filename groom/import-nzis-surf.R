@@ -72,6 +72,10 @@ nz <- merge(nz, qual_labs, by.x = "qualification", by.y = "value", all.x = TRUE)
 nz <-  nz %>%
    mutate(income_positive = ifelse(income > 1, income, 1))
 
+
+#------------save----------
+save(nz, file = "data/nz.rda")
+
 #================exploring=================
 nz %>%
    ggplot(aes(y = income, x = ethnicity_meaning)) +
